@@ -1,0 +1,16 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=54
+
+This script is basically just three functions:
+  ConvertToBase(int, base)
+  ConvertFromBase(str, base)
+  ConvertBases(str, base1, base2)
+
+And two example functions that are commented out.
+
+The following mappings may also be useful:
+" Translate the character under the cursor to a decimal value:
+nmap <M-a>d i<C-R>=char2nr(getline(line("."))[col(".") - 1])<CR><ESC>lx
+" ... hexadecimal value:
+nmap <M-a>h ix<C-R>=ConvertToBase(char2nr(getline(line("."))[col(".") - 1]),16)<CR><ESC>lx
+" ... octal value:
+nmap <M-a>o i<C-R>=ConvertToBase(char2nr(getline(line("."))[col(".") - 1]),8)<CR><ESC>lx
